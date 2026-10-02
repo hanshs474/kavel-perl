@@ -1,0 +1,12 @@
+#!/usr/bin/env perl
+# kavel "an isometric coffee shop, pastel palette"
+use strict;
+use warnings;
+use WebService::Kavel;
+
+my $prompt = join ' ', @ARGV;
+die qq{usage: kavel "your prompt"\n} unless length $prompt;
+my $r = WebService::Kavel->new->generate($prompt);
+if ($r->{ok}) { print "$r->{url}\n"; exit 0 }
+print STDERR "$r->{reason}: $r->{message}\n";
+exit 1;

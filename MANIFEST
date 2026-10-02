@@ -1,0 +1,7 @@
+LICENSE
+Makefile.PL
+MANIFEST
+README.md
+bin/kavel
+lib/WebService/Kavel.pm
+t/00-load.t
